@@ -1,0 +1,15 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout  /etc/page_configuration.xsd">
+    <body>
+      <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
+       <referenceBlock name="top.search" remove="true" /> 
+       <move element="navigation.sections" destination="header-wrapper" />
+        <move element="minicart" destination="header-wrapper" after="header.link"/> 
+      <referenceBlock name="header.links">
+          <block class="Magento\Framework\View\Element\Html\Link\Current" name="link" template="Magento_Theme::imageblock.phtml"/>
+      </referenceBlock> 
+      <referenceBlock name="header-wrapper">
+          <block class="Magento\Framework\View\Element\Html\Link\Current" name="buttonimg" template="Magento_Theme::buttonimg.phtml"/>
+      </referenceBlock>
+    </body>
+</page>

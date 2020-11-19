@@ -1,1 +1,16 @@
-<img src="<?php echo $this->getViewFileUrl('img/button.png'); ?>" class="buttonimgstyle" />
+<div class="buttonimgstyle">
+<i class="fas fa-search searchiconstyle" ></i></div>
+
+  <script type="text/javascript">
+		require(['jquery'], function($) {	
+
+      $(".buttonimgstyle").on("click", function(){
+        $(".buttonimgstyle").addClass("jquerystylebutton");
+        $(".fas.fa-search").addClass("jqueryiconsearch");
+        $(".block.block-search").addClass("jquerysearch");
+        $(".search").addClass("searchdiv");
+       });
+        });
+    </script>
+     
+    

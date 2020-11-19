@@ -12,11 +12,10 @@
 <div data-block="minicart" class="minicart-wrapper">
     <a class="showcart" href="<?= /* @escapeNotVerified */ $block->getShoppingCartUrl() ?>"
        data-bind="scope: 'minicart_content'">
-       <img src="<?php echo $this->getViewFileUrl('img/bag1.png'); ?>" class="bagstyle" />
+       <img src="<?php echo $this->getViewFileUrl('img/bagimg.png'); ?>" class="bagstyle" />
         <span class="counter qty empty" data-bind="css: { empty: !!getCartParam('summary_count') == false }, blockLoader: isLoading">
-        <span class="counter-number"><!-- ko text: getCartParam('summary_count') -->(0)<!-- /ko --></span>
-       
-            <span class="counter-label">
+        <span class="counter-number">(0)</span>
+          <span class="counter-label">
             <!-- ko if: getCartParam('summary_count') --><!-- /ko -->
             <img src="<?php echo $this->getViewFileUrl('img/arrow.png'); ?>" class="arrowstyle" />
             </span>

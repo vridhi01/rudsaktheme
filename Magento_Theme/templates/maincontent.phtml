@@ -1,0 +1,99 @@
+<div class="maincontentdiv">
+<div class="middlediv0 slideshow-container">
+    <div class="mySlides fade">
+    <img src="<?php echo $this->getViewFileUrl('img/mainimage.png'); ?>" class="mainimage" />
+    </div>
+    <div class="mySlides fade">
+    <img src="<?php echo $this->getViewFileUrl('img/mainimage.png'); ?>" class="mainimage" />
+    </div>
+    <div class="mySlides fade">
+    <img src="<?php echo $this->getViewFileUrl('img/mainimage.png'); ?>" class="mainimage" />
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<div class="middlediv1">
+  <div class="innerdiv1">
+   <div class="middlediv1div1"><img src="<?php echo $this->getViewFileUrl('img/smallimg1.png'); ?>" class="smallimg1" /></div>
+   <div class="middlediv1div2"><img src="<?php echo $this->getViewFileUrl('img/smallimg2.png'); ?>" class="smallimg2" /></div>
+   <div class="middlediv1div3"><img src="<?php echo $this->getViewFileUrl('img/smallimg3.png'); ?>" class="smallimg3" /></div>
+</div>
+</div>
+
+ <div class="middlediv2">
+   <div class="middlediv2div1"><img src="<?php echo $this->getViewFileUrl('img/middleimg1.png'); ?>" class="smallimg3" /></div>
+   <div class="middlediv2div2"><img src="<?php echo $this->getViewFileUrl('img/middleimg2.png'); ?>" class="smallimg3" /></div>
+</div>
+
+<div class="middlediv3">
+<div class="middlediv3div1"><img src="<?php echo $this->getViewFileUrl('img/middleimg3.png'); ?>" class="middleimg3" /></div>
+
+<div class="middlediv3div2">
+    <div class="innerdiv3div2">
+        <div class="paragraphandheadingdiv1">
+            <h1 class="div3h1">FEMMES</h1>
+            <h3 class="div3h2">NOUVELLE COLLECTION</h3>
+            <p class="div3p1">Lorem ipsum dolor sit amet,consectetur .</p>
+            <p class="div3p2">Si color amet equtison dolor villenue</p>
+        </div>
+        <div class="firstrow1">
+        <?php echo $block->getLayout()->createBlock('Mageplaza\Productslider\Block\NewProducts')->setProductsCount(4)->setCategoryId(14)->setTemplate('Mageplaza_Productslider::productslider.phtml')->toHtml();?>
+            
+        </div>
+    </div>
+</div>
+</div>
+<div class="middlediv4">
+   <div class="middlediv4div1">
+       <div class="innerdiv4div1">
+            <div class="paragraphandheadingdiv1">
+                <h1 class="div3h1">HOMMES</h1>
+                <h3 class="div3h2">NOUVELLE COLLECTION</h3>
+                <p class="div3p1">Lorem ipsum dolor sit amet,consectetur .</p>
+                <p class="div3p2">Si color amet equtison dolor villenue</p>
+            </div>
+            <div class="firstrow1"> 
+            <?php echo $block->getLayout()->createBlock('Mageplaza\Productslider\Block\NewProducts')->setProductsCount(4)->setCategoryId(15)->setTemplate('Mageplaza_Productslider::productslider.phtml')->toHtml();?>
+               
+            </div>
+       </div>
+    </div>
+    <div class="middlediv4div2"><img src="<?php echo $this->getViewFileUrl('img/middlediv4.png'); ?>" class="div4img3" /></div>
+</div>
+<div class="middlediv5">
+
+<div class="innerdiv5"><h1 class="div5h1">LES ESSENTILES</h1>
+
+   <?php echo $block->getLayout()->createBlock('Mageplaza\Productslider\Block\NewProducts')->setProductsCount(10)->setTemplate('Mageplaza_Productslider::slider.phtml')->toHtml();?>
+  </div>
+</div> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>

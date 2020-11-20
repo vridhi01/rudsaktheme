@@ -1,0 +1,49 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout  /etc/page_configuration.xsd">
+   <body>
+      <referenceBlock name="register-link" remove="true" />
+      <!--for Create Account Link-->
+      <move element="navigation.sections" destination="header-wrapper" />
+      <move element="minicart" destination="header-wrapper" after="header.link"/>
+      <referenceBlock name="header.links">
+         <block class="Magento\Framework\View\Element\Html\Link\Current" name="link" template="Magento_Theme::imageblock.phtml"/>
+      </referenceBlock>
+      <referenceBlock name="header-wrapper">
+         <container name="searchiconcontainer" htmlTag="div" htmlClass="stylesearchiconcontainer">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="buttonimg" template="Magento_Theme::buttonimg.phtml"/>
+         </container>
+      </referenceBlock>
+      <referenceContainer name="page.wrapper">
+         <container name="searchcontainer" htmlTag="div" before="main.content" htmlClass="search"/>
+      </referenceContainer>
+      <move element="top.search" destination="searchcontainer"/>
+      <referenceBlock name="top.search">
+         <block class="Magento\Framework\View\Element\Html\Link\Current" name="closebutton" template="Magento_Theme::closebutton.phtml"/>
+      </referenceBlock>
+      <referenceBlock name="form.subscribe" remove="true"/>
+      <referenceBlock name="footer_links" remove="true"/>
+      <referenceContainer name="footer">
+         <block class="Magento\Framework\View\Element\Html\Link\Current" name="footerlinks" template="Magento_Theme::footerlinks.phtml"/>
+      </referenceContainer>
+      <referenceContainer name="page.bottom.container">
+         <container name="page.bottom" label="Before Page Footer" htmlTag="div" htmlClass="content"/>
+      </referenceContainer>
+      <referenceContainer name="before.body.end">
+         <block class="Magento\Framework\View\Element\Html\Link\Current" name="copyrightblock" template="Magento_Theme::copyrightblock.phtml"/>
+         <container name="dolorcontainer" htmlTag="div" htmlClass="dolorcontainer"/>
+      </referenceContainer>
+      <referenceBlock name="copyright" remove="true"/>
+      <move element="currency" destination="footer"/>
+
+      <referenceContainer name="page.bottom">
+       <block class="Magento\Framework\View\Element\Html\Link\Current" name="abovefooter" template="Magento_Theme::abovefooter.phtml"/>
+      </referenceContainer>
+
+        <referenceContainer name="main">
+           <block class="Magento\Framework\View\Element\Html\Link\Current" name="maincontent" template="Magento_Theme::maincontent.phtml"/>
+        </referenceContainer>
+
+        
+
+   </body>
+</page>
